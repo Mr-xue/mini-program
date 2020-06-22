@@ -1,8 +1,9 @@
 {
   "pages": [
-		"pages/index/index",
-		"pages/index-with-data/index",
-    "pages/logs/logs"
+    "pages/index/index",
+    "pages/index-with-data/index",
+    "pages/logs/logs",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,5 +11,28 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/index-with-data/index",
+        "text": "首页2"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "日志"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

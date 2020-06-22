@@ -10,5 +10,10 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}-{{reverseMotto}}-{{newProp}}</text>
   </view>
+
+  <mp-dialog title="test1" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+        <view>test content1</view>
+  </mp-dialog>
+
   <test-store />
 </view>

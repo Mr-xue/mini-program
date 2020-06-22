@@ -14,6 +14,7 @@ create.Page(store, {
   computed: {
     reverseMotto(scope) {
       console.log('===',scope.data)
+      console.log('-->',this.name)
       return this.motto.split('').reverse().join('')
     }
   },

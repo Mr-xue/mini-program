@@ -17,6 +17,24 @@ create.Page(store, {
       return this.motto.split('').reverse().join('')
     }
   },
+  // 获取测试数据
+  getData() {
+    wx.request({
+      method:'GET',
+      url:'http://rap2.taobao.org:38080/app/mock/237678/getList',
+      data:{
+        
+      },
+      success (res) {
+        console.log('请求数据',res)
+        if(res.data.errMsg == 200){
+          
+        }else{
+
+        }
+      }
+    })
+  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -24,6 +42,7 @@ create.Page(store, {
     })
   },
   onLoad: function () {
+    this.getData();
     if (app.globalData.userInfo) {
       this.store.data.userInfo = app.globalData.userInfo
       this.store.data.hasUserInfo = true

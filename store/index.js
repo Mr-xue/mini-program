@@ -1,5 +1,6 @@
 export default {
   data: {
+    name : '海贼王',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
