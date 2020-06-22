@@ -61,7 +61,7 @@ create.Page(store, {
 
 
     const handler = function (evt) {
-      console.log(evt)
+      console.log('store变化',evt)
     }
     store.onChange(handler)
 
