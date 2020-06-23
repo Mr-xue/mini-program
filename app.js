@@ -6,9 +6,13 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    // 场景值用来描述用户进入小程序的路径
+    // console.log('----->',wx.getLaunchOptionsSync())
+
     // 登录
     wx.login({
       success: res => {
+        // console.log('login事件',res)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })

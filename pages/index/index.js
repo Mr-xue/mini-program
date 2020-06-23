@@ -17,24 +17,13 @@ create.Page(store, {
       return this.motto.split('').reverse().join('')
     }
   },
-  // 获取测试数据
-  getData() {
-    wx.request({
-      method:'GET',
-      url:'http://rap2.taobao.org:38080/app/mock/237678/getList',
-      data:{
-        
-      },
-      success (res) {
-        console.log('请求数据',res)
-        if(res.data.errMsg == 200){
-          
-        }else{
-
-        }
-      }
+  // 跳转测试
+  go() {
+    wx.navigateTo({
+      url:'/package1/pages/test/test?name=www'
     })
   },
+  
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -42,7 +31,10 @@ create.Page(store, {
     })
   },
   onLoad: function () {
-    this.getData();
+    console.log('信息',wx.getAccountInfoSync())
+    console.log('系统信息',wx.getSystemInfoSync())
+    console.log('环境',wx.env)
+
     if (app.globalData.userInfo) {
       this.store.data.userInfo = app.globalData.userInfo
       this.store.data.hasUserInfo = true

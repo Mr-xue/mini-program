@@ -2,8 +2,15 @@
   "pages": [
     "pages/index/index",
     "pages/index-with-data/index",
-    "pages/logs/logs",
-    "pages/test/test"
+    "pages/logs/logs"
+  ],
+  "subpackages":[
+    {
+      "root":"package1",
+      "pages":[
+        "pages/test/test"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,10 +31,6 @@
       {
         "pagePath": "pages/logs/logs",
         "text": "日志"
-      },
-      {
-        "pagePath": "pages/test/test",
-        "text": "测试"
       }
     ]
   },
