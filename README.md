@@ -31,6 +31,7 @@
 
 - 整个小程序所有分包大小不超过 **16M**
 - 单个分包/主包大小不能超过 **2M**
+- tabBar 页面必须在 app（主包）内
 
 所以在开发过程中，需要进行分包处理，把首要加载项放到主包，其余页面或组件进行分包处理，类似vue路由的懒加载
 
@@ -39,8 +40,8 @@
 
 
 
-## 注意事项
-1.computed中无法访问this,可通过scope访问data对象
+## Tip
+### 1.computed中无法访问this,可通过scope访问data对象
 
     computed: {
     	reverseMotto(scope) {
@@ -50,9 +51,21 @@
     	}
     },
 
-2.自定义组件样式注意
+### 2.自定义组件样式注意
 
 ![NJFYF0.png](https://s1.ax1x.com/2020/06/22/NJFYF0.png)
+
+### 3.open-data可在不需要用户授权的情况下直接展示用户信息
+
+[查看文档](https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html)
+
+### 4.授权注意事项
+
+1. `wx.authorize({scope: "scope.userInfo"})`，不会弹出授权窗口，请使用 `<button open-type="getUserInfo"/>`
+
+2. 需要授权 `scope.userLocation、scope.userLocationBackground` 时必须配置地理位置用途说明。
+
+[授权文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)
 
 
 ## 要点文档

@@ -8,6 +8,10 @@
     </block>
   </view>
 
+<view style="border-radius:50%;width:130px;height:132px;">
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+
   <view bindtap="go">跳转测试页</view>
 
 

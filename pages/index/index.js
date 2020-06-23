@@ -80,6 +80,7 @@ create.Page(store, {
 
   },
   getUserInfo: function (e) {
+    console.log('用户信息',e)
     this.store.data.userInfo = e.detail.userInfo
     this.store.data.hasUserInfo = true
 
