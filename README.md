@@ -68,6 +68,8 @@
 
 [授权文档](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)
 
+#### 5.tabBar图标设置注意事项：icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片。
+
 
 ## 要点文档
 > [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)
