@@ -2,14 +2,14 @@
 
 ## 工程化配置
 
-### 1.项目中使用官方WeUI框架作为视图层应用框架，统一采用 `useExtendedLib` 方式引入 
+#### 1.项目中使用官方WeUI框架作为视图层应用框架，统一采用 `useExtendedLib` 方式引入 
 
 注意：通过此方式引入WeUI，在页面json中引入框架组件时的路径应写为, `weui-miniprogram/xxx/xxx`
 
 [查看文档](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/quickstart.html)
 
 
-### 2.接口的统一处理
+#### 2.接口的统一处理
 
 封装文件在utils目录下的http.js中，可根据实际返回的数据结构对其进行修改。
 每个需要调用接口的页面或组件都需要引入
@@ -17,7 +17,7 @@
 > 使用方式参考目录下的test页面
 
 
-### 3.数据集中管理方案
+#### 3.数据集中管理方案
 
 采用小程序官方原生框架 **`OMIX2.0`** 进行处理
 
@@ -27,7 +27,7 @@
 [查看文档](https://github.com/Tencent/omi/tree/master/packages/omix)
 
 
-### 4.小程序分包处理
+#### 4.小程序分包处理
 
 - 整个小程序所有分包大小不超过 **16M**
 - 单个分包/主包大小不能超过 **2M**
@@ -41,7 +41,8 @@
 
 
 ## Tip
-### 1.computed中无法访问this,可通过scope访问data对象
+
+#### 1.computed中无法访问this,可通过scope访问data对象
 
     computed: {
     	reverseMotto(scope) {
@@ -51,15 +52,15 @@
     	}
     },
 
-### 2.自定义组件样式注意
+#### 2.自定义组件样式注意
 
 ![NJFYF0.png](https://s1.ax1x.com/2020/06/22/NJFYF0.png)
 
-### 3.open-data可在不需要用户授权的情况下直接展示用户信息
+#### 3.open-data可在不需要用户授权的情况下直接展示用户信息
 
 [查看文档](https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html)
 
-### 4.授权注意事项
+#### 4.授权注意事项
 
 1. `wx.authorize({scope: "scope.userInfo"})`，不会弹出授权窗口，请使用 `<button open-type="getUserInfo"/>`
 
