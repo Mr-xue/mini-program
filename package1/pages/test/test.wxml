@@ -1,0 +1,11 @@
+ 
+
+ <view class="btn-view">
+  <button bindtap="back" class="hhh">返回</button>
+
+  <button type="primary" bindtap="openDialog">打开弹窗</button>
+ </view>
+
+<mp-dialog title="test1" show="{{show}}" bindbuttontap="tapBtn" buttons="{{oneButton}}">
+  <view>测试弹窗</view>
+</mp-dialog>

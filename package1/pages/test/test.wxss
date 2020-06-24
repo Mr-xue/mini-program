@@ -1,0 +1,8 @@
+/* pages/test/test.wxss */
+.btn-view{
+  width:50%;
+  margin:250rpx auto 0;
+}
+button{
+  margin-top:30rpx;
+}
