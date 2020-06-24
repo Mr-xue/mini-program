@@ -70,11 +70,20 @@
 
 #### 5.tabBar图标设置注意事项：icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片。
 
+[自定义tabBar文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)
+
+#### 6.页面接收数据，类似于路由传参
+
+1.通过Page构造器构造的页面组件可以在onLoad(option)的周期函数中,通过参数option获取
+
+2.通过Component构造器构造的页面组件，可通过提前在组件的properties中编写对好要接收的参数进行获取
+
 
 ## 要点文档
 > [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)
 
-> [自定义组件使用方法](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
+> [
+> 组件使用方法](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
 
 > [组件的生命周期](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html)
 

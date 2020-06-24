@@ -13,7 +13,7 @@ create.Page(store, {
   ],
   computed: {
     reverseMotto(scope) {
-      console.log('===',scope.data)
+      console.log('===',scope.data,this.name,scope.name)
       return this.motto.split('').reverse().join('')
     }
   },
