@@ -26,4 +26,12 @@ create.Page(store, {
       })
     }
   },
+
+  onReachBottom() {
+    console.log('==>','到底了')
+  },
+
+  onPullDownRefresh() {
+    console.log('----','下拉刷新')
+  }
 })

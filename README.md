@@ -60,6 +60,20 @@
 
 ![NJFYF0.png](https://s1.ax1x.com/2020/06/22/NJFYF0.png)
 
+2.组件和页面的css默认是隔离的，及页面中的样式无法影响到组件内的样式
+
+- app.wxss 或页面的 wxss 中使用了标签名选择器（或一些其他特殊选择器）来直接指定样式，这些选择器会影响到页面和全部组件。通常情况下这是不推荐的做法。
+
+- 指定特殊的样式隔离选项 styleIsolation
+    
+		options: {
+			styleIsolation: 'isolated'
+		}
+		//isolated 表示启用样式隔离，
+		//apply-shared 表示页面 wxss 样式将影响到自定义组件，
+		//shared 表示页面 wxss 样式将影响到自定义组件
+    
+
 #### 3.open-data可在不需要用户授权的情况下直接展示用户信息
 
 [查看文档](https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html)
@@ -83,6 +97,7 @@
 2.通过Component构造器构造的页面组件，可通过提前在组件的properties中编写对好要接收的参数进行获取
 
 #### 7.自定义tabBar可能遇到的问题 [(参考文章)](https://www.cnblogs.com/youwei716/p/13152455.html)
+
 
 ## 要点文档
 > [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)

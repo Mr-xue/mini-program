@@ -4,7 +4,7 @@ import store from '../../store/index'
 //获取应用实例
 const app = getApp()
 
-create.Page(store, {
+create.Component(store, {
   use: [
     'tpl',
     'motto',
@@ -17,30 +17,6 @@ create.Page(store, {
     reverseMotto() {
       return this.motto.split('').reverse().join('')
     }
-  },
-  onShow() {
-
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
-
-  },
-
-  // 跳转测试
-  go() {
-    wx.navigateTo({
-      url:'/package-1/pages/test/test?name=www'
-    })
-  },
-  
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
     console.log('信息',wx.getAccountInfoSync())
@@ -98,10 +74,39 @@ create.Page(store, {
     }) */
 
   },
-  getUserInfo: function (e) {
-    console.log('用户信息',e)
-    this.store.data.userInfo = e.detail.userInfo
-    this.store.data.hasUserInfo = true
+  onShow() {
 
-  }
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
+
+  },
+
+  methods:{
+    // 跳转测试
+    go() {
+      wx.navigateTo({
+        url:'/subPackages/package-1/pages/test/test?name=www'
+      })
+    },
+    
+    //事件处理函数
+    bindViewTap: function () {
+      wx.navigateTo({
+        url: '../logs/logs'
+      })
+    },
+
+    getUserInfo: function (e) {
+      console.log('用户信息',e)
+      this.store.data.userInfo = e.detail.userInfo
+      this.store.data.hasUserInfo = true
+  
+    }
+  },
+
+  
 })

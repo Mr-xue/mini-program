@@ -1,0 +1,8 @@
+<!--pages/main/main.wxml-->
+
+<text>主页模板 {{$.tpl}}</text>
+
+<button style="margin-bottom:20rpx;" bindtap="changeTpl">切换主页模板{{ $.tpl === 1 ? 2 : 1}}</button>
+
+<index wx:if="{{$.tpl==1}}"></index>
+<index2 wx:elif="{{$.tpl==2}}"></index2>

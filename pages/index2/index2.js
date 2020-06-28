@@ -19,7 +19,11 @@ Component({
    */
   methods: {
     go() {
-      wx.switchTab({
+      /* wx.switchTab({
+        url:'/pages/logs/logs'
+      }) */
+
+      wx.redirectTo({
         url:'/pages/logs/logs'
       })
     }

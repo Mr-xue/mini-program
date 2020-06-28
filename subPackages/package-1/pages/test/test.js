@@ -1,8 +1,8 @@
 //logs.js
-import create from '../../../utils/create'
-import store from '../../../store/index'
+import create from '../../../../utils/create'
+import store from '../../../../store/index'
 
-const http = require('../../../utils/http.js')
+const http = require('../../../../utils/http.js')
 
 create.Page(store,{
   use:['name'],

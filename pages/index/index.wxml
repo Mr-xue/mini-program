@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <view class="container">
 
-<block wx:if="{{false}}">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -16,19 +15,15 @@
 
   <view bindtap="go">跳转测试页</view>
 
-
+<!-- 
   <view class="usermotto">
     <text class="user-motto">{{motto}}-{{reverseMotto}}-{{newProp}}</text>
   </view>
 
   <mp-dialog title="test1" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
         <view>test content1</view>
-  </mp-dialog>
+  </mp-dialog> -->
 
   <test-store user-name="{{userInfo.nickName}}" />
-</block>
 
-
-  <index2 wx:if="{{tpl==1}}"></index2>
-  <test-store wx:else user-name="{{userInfo.nickName}}" />
 </view>

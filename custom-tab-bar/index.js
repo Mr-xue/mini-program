@@ -7,16 +7,16 @@ Component({
     selectedColor: "#3cc51f",
     list: [
       {
-        "pagePath": "/pages/index/index",
+        "pagePath": "/pages/main/main",
         "iconPath": "/image/icon_component.png",
         "selectedIconPath": "/image/icon_component_HL.png",
-        "text": "首页"
+        "text": "主页"
       },
       {
         "pagePath": "/pages/index-with-data/index",
         "iconPath": "/image/icon_component.png",
         "selectedIconPath": "/image/icon_component_HL.png",
-        "text": "首页2"
+        "text": "首页二"
       },
       {
         "pagePath": "/pages/logs/logs",
@@ -42,7 +42,7 @@ Component({
       const data = e.currentTarget.dataset
       const url = data.path
       wx.switchTab({url})
-      /* this.setData({
+     /*  this.setData({
         selected: data.index
       }) */
     }
