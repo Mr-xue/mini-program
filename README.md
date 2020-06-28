@@ -33,7 +33,7 @@
 - 单个分包/主包大小不能超过 **2M**
 - tabBar 页面必须在 app（主包）内
 
-所以在开发过程中，需要进行分包处理，把首要加载项放到主包，其余页面或组件进行分包处理
+所以在开发过程中，需要进行分包处理，把首要加载项放到主包，其余页面或组件进行分包处理。默认情况下，只要没有配置到分包目录下的文件，会统一被构建到主包中。
 
 [查看分包处理文档](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages.html)
 
@@ -92,11 +92,11 @@
 
 #### 6.页面传参及接受参数
 
-1.通过页面跳转方法：wx.reLaunch、wx.redirectTo、wx.navigateTo，以 ` url?name=李磊&age=18 ` 的方式进行传参，**wx.switchTab无法通过url进行传参**
+- 通过页面跳转方法：wx.reLaunch、wx.redirectTo、wx.navigateTo，以 ` url?name=李磊&age=18 ` 的方式进行传参，**wx.switchTab无法通过url进行传参**
 
-1.通过Page构造器构造的页面，可以在onLoad(option)的周期函数中,通过参数option获取
+- 通过Page构造器构造的页面，可以在onLoad(option)的周期函数中,通过参数option获取
 
-2.通过Component构造器构造的页面，可通过提前在组件的properties中编写对好要接收的参数进行获取
+- 通过Component构造器构造的页面，可通过提前在组件的properties中编写对好要接收的参数进行获取
 
 #### 7.自定义tabBar可能遇到的问题 [(参考文章)](https://www.cnblogs.com/youwei716/p/13152455.html)
 
@@ -126,6 +126,4 @@
 > [组件间通信与事件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html)
 
 > [动画的处理](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
-> 
-> [weUI组件库调用方法](https://github.com/wechat-miniprogram/weui-miniprogram/tree/master/tools/demo/example)
 
