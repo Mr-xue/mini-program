@@ -1,5 +1,7 @@
 <!--index.wxml-->
 <view class="container">
+
+<block wx:if="{{false}}">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -24,4 +26,9 @@
   </mp-dialog>
 
   <test-store user-name="{{userInfo.nickName}}" />
+</block>
+
+
+  <index2 wx:if="{{tpl==1}}"></index2>
+  <test-store wx:else user-name="{{userInfo.nickName}}" />
 </view>

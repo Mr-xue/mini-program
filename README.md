@@ -14,7 +14,7 @@
 封装文件在utils目录下的http.js中，可根据实际返回的数据结构对其进行修改。
 每个需要调用接口的页面或组件都需要引入
 
-> 使用方式参考目录下的test页面
+> 使用方式参考目录**package-1下的test页面**
 
 
 #### 3.数据集中管理方案
@@ -33,11 +33,15 @@
 - 单个分包/主包大小不能超过 **2M**
 - tabBar 页面必须在 app（主包）内
 
-所以在开发过程中，需要进行分包处理，把首要加载项放到主包，其余页面或组件进行分包处理，类似vue路由的懒加载
+所以在开发过程中，需要进行分包处理，把首要加载项放到主包，其余页面或组件进行分包处理
 
 [查看分包处理文档](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages.html)
 
+#### 5.多套模板方案
 
+1.将所有模板首页提取为自定义组件，然后在入口页面通过接口判断模板类型，展示对应的首页组件
+
+2.模板的入口页面皆需要配置到app.json的tabBar中，且不能配置到分包中
 
 
 ## Tip
@@ -78,6 +82,7 @@
 
 2.通过Component构造器构造的页面组件，可通过提前在组件的properties中编写对好要接收的参数进行获取
 
+#### 7.自定义tabBar可能遇到的问题 [(参考文章)](https://www.cnblogs.com/youwei716/p/13152455.html)
 
 ## 要点文档
 > [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)
@@ -96,3 +101,4 @@
 > [动画的处理](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
 > 
 > [weUI组件库调用方法](https://github.com/wechat-miniprogram/weui-miniprogram/tree/master/tools/demo/example)
+

@@ -6,6 +6,7 @@ const app = getApp()
 
 create.Page(store, {
   use: [
+    'tpl',
     'motto',
     'userInfo',
     'hasUserInfo',
@@ -17,10 +18,21 @@ create.Page(store, {
       return this.motto.split('').reverse().join('')
     }
   },
+  onShow() {
+
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 0
+      })
+    }
+
+  },
+
   // 跳转测试
   go() {
     wx.navigateTo({
-      url:'/package1/pages/test/test?name=www'
+      url:'/package-1/pages/test/test?name=www'
     })
   },
   
@@ -77,6 +89,13 @@ create.Page(store, {
     store.onChange(handler)
 
     //store.offChange(handler)
+
+    // 切换自定义tabBar
+   /*  let tab = this.getTabBar();
+    console.log(tab)
+    wx.switchTab({
+      url: tab.data.list[1].pagePath,
+    }) */
 
   },
   getUserInfo: function (e) {

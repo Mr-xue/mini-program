@@ -4,10 +4,10 @@
     "pages/index-with-data/index",
     "pages/logs/logs"
   ],
-  "subpackages":[
+  "subpackages": [
     {
-      "root":"package1",
-      "pages":[
+      "root": "package-1",
+      "pages": [
         "pages/test/test"
       ]
     }

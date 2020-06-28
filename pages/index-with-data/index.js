@@ -66,6 +66,16 @@ create.Page(store, {
     store.offChange(handler)
 
   },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 1
+      })
+    }
+  },
+
   getUserInfo: function (e) {
     this.store.data.userInfo = e.detail.userInfo
     this.store.data.hasUserInfo = true

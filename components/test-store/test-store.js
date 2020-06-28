@@ -1,6 +1,5 @@
 import create from '../../utils/create'
 
-
 create.Component({
   use: ['logs'],
   properties:{

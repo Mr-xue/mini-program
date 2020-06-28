@@ -6,6 +6,7 @@ const util = require('../../utils/util.js')
 
 create.Page(store, {
   use: ['logs'],
+  
   onLoad: function () {
     wx.showShareMenu({
       success(res){
@@ -15,5 +16,14 @@ create.Page(store, {
     this.store.data.logs = (wx.getStorageSync('logs') || []).map(log => {
       return util.formatTime(new Date(log))
     })
-  }
+  },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
+  },
 })

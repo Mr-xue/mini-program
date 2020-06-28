@@ -1,0 +1,2 @@
+<!--components/index2/index2.wxml-->
+<text bindtap="go">页面自定义组件2</text>
