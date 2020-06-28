@@ -1,6 +1,6 @@
 export default {
   data: {
-    tpl  : 1,
+    tpl  : 2,
     name : '海贼王',
     motto: 'Hello World',
     userInfo: {},

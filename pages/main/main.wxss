@@ -1,1 +1,6 @@
 /* pages/main/main.wxss */
+.main-page{
+  height:100%;
+  overflow-y: auto;
+  padding-bottom: 100rpx;
+}
