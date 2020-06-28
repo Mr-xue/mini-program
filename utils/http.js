@@ -1,3 +1,7 @@
+/**
+ * 封装网络请求模块
+ */
+ 
  //dev、prod用于区分开发环境和线上环境,上线前要改为prod
 let env = 'dev',
     baseUrl;
@@ -28,6 +32,8 @@ const http = ({
       ...other,
       complete: (res) => {
         wx.hideLoading();
+
+        // 根据实际接口数据结构及错误状态进行提示
         if (res.statusCode == 200 ) {
           resolve(res.data)
         } else {

@@ -2,7 +2,7 @@
 
 ## 工程化配置
 
-#### 1.项目中使用官方WeUI框架作为视图层应用框架，统一采用 `useExtendedLib` 方式引入 
+#### 1.项目中使用官方WeUI框架作为视图层应用框架，统一采用 `useExtendedLib` 方式引入，通过此形式引入，编译时不计入构建包的大小
 
 注意：通过此方式引入WeUI，在页面json中引入框架组件时的路径应写为, `weui-miniprogram/xxx/xxx`
 
@@ -14,7 +14,7 @@
 封装文件在utils目录下的http.js中，可根据实际返回的数据结构对其进行修改。
 每个需要调用接口的页面或组件都需要引入
 
-> 使用方式参考目录**package-1下的test页面**
+> 使用方式参考目录**subPackages/package-1下的test页面**
 
 
 #### 3.数据集中管理方案
@@ -22,7 +22,7 @@
 采用小程序官方原生框架 **`OMIX2.0`** 进行处理
 
 使用该方案，需要通过OMIX的脚手架进行项目的创建，同时注意页面和自定义组件的创建方式
-> 不需要注入 store 的页面或组件用使用Page和Component 构造器, Component 通过 triggerEvent 与上层通讯或与上层的 store 交互
+> 不需要注入 store 的页面或组件应使用默认Page和Component构造器进行创建， Component 通过 triggerEvent 与上层通讯或与上层的 store 交互
 
 [查看文档](https://github.com/Tencent/omi/tree/master/packages/omix)
 
@@ -39,20 +39,20 @@
 
 #### 5.多套模板方案
 
-1.将所有模板首页提取为自定义组件，然后在入口页面通过接口判断模板类型，展示对应的首页组件
+1.将所有模板首页通过Component声明为组件，然后在入口页面通过接口判断模板类型，展示对应的首页组件
 
-2.模板的入口页面皆需要配置到app.json的tabBar中，且不能配置到分包中
+2.建议单独创建一个文件夹，存放所有模板的首页组件
+
+
 
 
 ## Tip
 
-#### 1.computed中无法访问this,可通过scope访问data对象
-
+#### 1.通过OMIX创建的页面、组件，computed中要获取当前组件的data，需要使用this.data
     computed: {
     	reverseMotto(scope) {
-    	  console.log('===',scope.data)
-    	  console.log('-->',this.name)
-    	  return this.motto.split('').reverse().join('')
+    	  console.log('===',this.data.name) //当前组件的name
+    	  console.log('===',this.name) //omix中存储的name
     	}
     },
 
@@ -90,20 +90,32 @@
 
 [自定义tabBar文档](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html)
 
-#### 6.页面接收数据，类似于路由传参
+#### 6.页面传参及接受参数
 
-1.通过Page构造器构造的页面组件可以在onLoad(option)的周期函数中,通过参数option获取
+1.通过页面跳转方法：wx.reLaunch、wx.redirectTo、wx.navigateTo，以 ` url?name=李磊&age=18 ` 的方式进行传参，**wx.switchTab无法通过url进行传参**
 
-2.通过Component构造器构造的页面组件，可通过提前在组件的properties中编写对好要接收的参数进行获取
+1.通过Page构造器构造的页面，可以在onLoad(option)的周期函数中,通过参数option获取
+
+2.通过Component构造器构造的页面，可通过提前在组件的properties中编写对好要接收的参数进行获取
 
 #### 7.自定义tabBar可能遇到的问题 [(参考文章)](https://www.cnblogs.com/youwei716/p/13152455.html)
 
+#### 8.wxml中绑定的事件，无法给方法直接传递参数，而需要通过触发事件元素的dataset获取
+
+> 例如：点击组件，向change方法传递name名称
+   
+    <component-tag-name bindtap="change('name')" /> // 错误
+    <component-tag-name bindtap="onMyEvent" data-name="name"/> //正确
+
+	//获取方法
+	change(e) {
+	  let name = e.currentTarget.dataset.name;
+	},
 
 ## 要点文档
 > [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)
 
-> [
-> 组件使用方法](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
+> [组件使用方法](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
 
 > [组件的生命周期](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html)
 
