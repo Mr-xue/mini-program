@@ -167,6 +167,6 @@
 
 > [组件间通信与事件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html)
 
-> [动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
-> [动画的处理](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
+> [关键帧动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
 
+> [小程序发布流程](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/release.html#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF)
