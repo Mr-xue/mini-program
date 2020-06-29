@@ -13,7 +13,16 @@ create.Page(store,{
    * 页面的初始数据
    */
   data: {
-    tpl : 666
+    tpl : 666,
+
+    // 模板2用到的数据
+    show:'',
+    background: ['https://img.picbling.cn/dc2d5c50-74f3-493f-9d87-df78096b1781.jpg-pcPgCoverMiddle', 'https://img.picbling.cn/974b6af0-e112-496e-b199-173718da6a8b.jpg-pcPgCoverMiddle', 'https://img.picbling.cn/f44de42f-b6fd-4006-a1e2-cba886c1d8d0.jpg-pcPgCoverMiddle'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
   },
 
   /**
@@ -81,5 +90,13 @@ create.Page(store,{
   changeTpl(scope) {
     console.log(this.data.tpl, this.data.$.tpl)
     this.store.data.tpl = this.data.$.tpl === 1 ? 2 : 1;
-  }
+  },
+
+  // 模板2调用方法
+  change(e) {
+    let d = e.currentTarget.dataset;
+    this.setData({
+      show: this.data.show == d.type ? '' : d.type
+    })
+  },
 })

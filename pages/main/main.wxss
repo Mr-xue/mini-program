@@ -1,3 +1,6 @@
+@import "/template/index/index1/index1.wxss";
+@import "/template/index/index2/index2.wxss";
+
 /* pages/main/main.wxss */
 .main-page{
   height:100%;

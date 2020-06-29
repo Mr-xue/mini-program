@@ -1,0 +1,30 @@
+<template name="index1">
+  <!--index.wxml-->
+  <view class="container">
+
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+
+  <!-- <view style="border-radius:50%;width:130px;height:132px;">
+    <open-data type="userAvatarUrl"></open-data>
+  </view> -->
+
+    <view bindtap="go">跳转测试页</view>
+
+  <!-- 
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}-{{reverseMotto}}-{{newProp}}</text>
+    </view>
+
+    <mp-dialog title="test1" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+          <view>test content1</view>
+    </mp-dialog> -->
+
+    <test-store user-name="{{userInfo.nickName}}" />
+  </view>
+</template>
