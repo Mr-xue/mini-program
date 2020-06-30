@@ -56,6 +56,8 @@
       </view>
     </view>
 
-    <view class="f-ele">浮动元素</view>
+    <view class="f-ele">
+      浮动元素
+    </view>
   </view>
 </view>

@@ -57,7 +57,10 @@
       </view>
     </view>
 
-    <view class="f-ele">浮动元素</view>
+    <view class="f-ele">
+      <i class="iconfont iconmima"></i>
+      浮动元素
+    </view>
   </view>
 </view>
 </template>

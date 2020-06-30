@@ -44,6 +44,16 @@
 2.建议单独创建一个文件夹，存放所有模板的首页组件
 
 
+#### 6.图标库使用iconfont
+
+引入方法：
+
+1、在iconfont项目中切换到 `Font class `选项卡， 然后生成在线链接
+
+2、在浏览器中打开在线链接， 将其中的代码全部复制到app.wxss中
+
+3.有新增图标后需要重新执行以上两步操作
+
 
 
 ## Tip
@@ -146,6 +156,7 @@
 	change(e) {
 	  let name = e.currentTarget.dataset.name;
 	},
+
 
 ## 注意
 **上线前需要将util目录下http.js的env改为prod后，才能构建，否则编译后调用的是本地接口**
