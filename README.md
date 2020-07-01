@@ -164,6 +164,8 @@
 
 [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onpulldownrefresh)
 
+
+
 ## 注意
 **上线前需要将util目录下http.js的env改为prod后，才能构建，否则编译后调用的是本地接口**
 
@@ -174,15 +176,13 @@
 
 > [组件使用方法](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/)
 
-> [自定义组件的参数属性说明](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html)
-
 > [组件的生命周期](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html)
+
+> [组件间通信与事件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html)
 
 > [Component 构造器说明](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html)
 
 > [数据监听器](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html)
-
-> [组件间通信与事件](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html)
 
 > [关键帧动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
 
