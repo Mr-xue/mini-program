@@ -1,5 +1,8 @@
 // components/index2/index2.js
 Component({
+  options: {
+    styleIsolation: 'shared'
+  },
   /**
    * 组件的属性列表
    */

@@ -1,0 +1,23 @@
+<view class="base_flex simon2_fixed" style="{{isIPhoneX?'padding-bottom:56rpx':''}}" wx:if="{{!isVideoFullScreen}}">
+	<view class="tab-{{link.tab}} {{link.tab===activeTab?'link wx_active':'link'}} sub_flex" wx:for="{{tabs}}" wx:for-item="link" wx:key="index">
+    <!-- 判断tab类型绑定事件 -->
+		<!-- <block wx:if="{{link.tab==='service'}}">
+			<button bindgetphonenumber="handleTabClick" class="button" data-tab="{{link.tab}}" openType="getPhoneNumber" wx:if="{{shouldGetPhone}}">
+				<i class="{{link.icon_workshop}} icon_size"></i>
+				<view class="link_text">{{link.text}} {{link.tab}}</view>
+			</button>
+			<view bindtap="handleTabClick" class="button" data-tab="{{link.tab}}" wx:else>
+				<i class="{{link.icon_workshop}} icon_size"></i>
+				<view class="link_text">{{link.text}} {{link.tab}}</view>
+			</view>
+		</block> -->
+		<!-- <button bindgetuserinfo="handleTabClick" class="button" data-tab="{{link.tab}}" lang="zh_CN" openType="getUserInfo" wx:if="{{link.tab==='account'&&link.openType==='getUserInfo'}}">
+			<i class="{{link.icon_workshop}} icon_size"></i>
+			<view class="link_text">{{link.text}} {{link.tab}}</view>
+		</button> -->
+		<view bindtap="tabClick" class="button {{link.tab == $.activeTab ? 'active' : ''}}" data-tab="{{link.tab}}">
+			<i class="iconfont icon_size {{link.iconName}} icon-demo"></i>
+			<view class="link_text">{{link.text}}</view>
+		</view>
+	</view>
+</view>

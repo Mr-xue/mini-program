@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/index-with-data/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/works/works",
+    "pages/series/series",
+    "pages/about/about",
+    "pages/mine/mine"
   ],
   "subpackages": [
     {
@@ -17,29 +20,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "custom": true,
-    "list": [
-      {
-        "pagePath": "pages/main/main",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component_HL.png",
-        "text": "主页"
-      },
-      {
-        "pagePath": "pages/index-with-data/index",
-        "iconPath": "image/icon_component.png",
-        "selectedIconPath": "image/icon_component_HL.png",
-        "text": "首页二"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "iconPath": "image/icon_API.png",
-        "selectedIconPath": "image/icon_API_HL.png",
-        "text": "日志"
-      }
-    ]
   },
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {

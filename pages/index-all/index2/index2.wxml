@@ -49,7 +49,7 @@
     <!-- 作品展示 -->
     <view class="work-tit">作品展示</view>
     <view class="works">
-      <view class="w-li" wx:for="123456">
+      <view class="w-li" wx:for="123456" wx:key="index">
         <image mode="aspectFill" src="https://img.picbling.cn/Fns9NskL3Ws-dDdKg8b7xPHBdoAn-pcPgCoverSmall"></image>
         <view class="w-tit">五彩的童年</view>
         <view class="w-time">July 9, 2018</view>
@@ -57,7 +57,11 @@
     </view>
 
     <view class="f-ele">
+      <i class="iconfont iconiconfontyonghu"></i>
       浮动元素
     </view>
   </view>
+
+  <!-- 底部tabbar -->
+  <tab-bar></tab-bar>
 </view>

@@ -7,7 +7,7 @@ import store from '../../store/index'
  * 全局数据
  */
 create.Page(store,{
-  use:['userInfo','tpl'],
+  use:['userInfo','tpl','activeTab'],
 
   /**
    * 页面的初始数据
@@ -49,6 +49,8 @@ create.Page(store,{
         selected: 0
       })
     }
+
+    console.log('66666',this.selectComponent('.test'))
   },
 
   /**
@@ -88,7 +90,6 @@ create.Page(store,{
 
   // 切换模板
   changeTpl(scope) {
-    console.log(this.data.tpl, this.data.$.tpl)
     this.store.data.tpl = this.data.$.tpl === 1 ? 2 : 1;
   },
 

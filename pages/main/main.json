@@ -1,6 +1,11 @@
 {
   "usingComponents": {
-    "index": "/pages/index/index",
-    "index2": "/pages/index2/index2"
+    "works":"/pages/works/works",
+    "series":"/pages/series/series",
+    "about":"/pages/about/about",
+    "mine":"/pages/mine/mine",
+
+    "index": "/pages/index-all/index/index",
+    "index2": "/pages/index-all/index2/index2"
   }
 }

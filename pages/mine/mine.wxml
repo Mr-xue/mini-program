@@ -1,0 +1,5 @@
+<!--pages/mine/mine.wxml-->
+<text>我的</text>
+
+
+<tab-bar></tab-bar>

@@ -1,13 +1,28 @@
-<import src="/template/index/index1/index1" />
-<import src="/template/index/index2/index2" />
-<!--pages/main/main.wxml-->
+<!-- <import src="/template/index/index1/index1" />
+<import src="/template/index/index2/index2" /> -->
 
 <view class="main-page">
-
   <button style="margin-bottom:20rpx;" bindtap="changeTpl">切换主页模板{{ $.tpl === 1 ? 2 : 1}}</button>
 
-<!--   <index wx:if="{{$.tpl==1}}"></index>
-  <index2 wx:elif="{{$.tpl==2}}"></index2> -->
+  <!-- 首页 -->
+  <block wx:if="{{$.activeTab == 'index'}}">
+    <index wx:if="{{$.tpl == 1}}"></index>
+    <index2 class="test" wx:elif="{{$.tpl == 2}}"></index2>
+  </block>
 
-  <template is="index{{$.tpl}}" data="{{show: show,background: background,indicatorDots: indicatorDots,vertical: vertical,autoplay: autoplay,interval: interval,duration: duration}}"></template>
+  <!-- 作品页 -->
+  <works wx:elif="{{$.activeTab == 'works'}}"></works>
+
+  <!-- 套系页面 -->
+  <series wx:elif="{{$.activeTab == 'series'}}"></series>
+
+  <!-- 关于 -->
+  <about wx:elif="{{$.activeTab == 'about'}}"></about>
+
+  <!-- 我的 -->
+  <mine wx:elif="{{$.activeTab == 'mine'}}"></mine>
+
+<!--   <template is="demo">
+  </template>
+  <template is="index{{$.tpl}}" data="{{show: show,background: background,indicatorDots: indicatorDots,vertical: vertical,autoplay: autoplay,interval: interval,duration: duration}}"></template> -->
 </view>

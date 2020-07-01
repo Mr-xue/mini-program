@@ -1,0 +1,3 @@
+<!--pages/series/series.wxml-->
+<text>套系页</text>
+<tab-bar></tab-bar>

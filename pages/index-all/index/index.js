@@ -1,32 +1,28 @@
-import create from '../../utils/create'
-import store from '../../store/index'
+import create from '../../../utils/create'
+import store from '../../../store/index'
 
 //获取应用实例
 const app = getApp()
 
-create.Page(store, {
+create.Component(store, {
   use: [
+    'tpl',
     'motto',
     'userInfo',
     'hasUserInfo',
-    'canIUse'
+    'canIUse',
+    'newProp'
   ],
   computed: {
-    reverseMotto(scope) {
-      console.log('===',scope.data,this.name,scope.name)
+    reverseMotto() {
       return this.motto.split('').reverse().join('')
     }
   },
-  data: {
-    name: 'omix'
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
+    console.log('信息',wx.getAccountInfoSync())
+    console.log('系统信息',wx.getSystemInfoSync())
+    console.log('环境',wx.env)
+
     if (app.globalData.userInfo) {
       this.store.data.userInfo = app.globalData.userInfo
       this.store.data.hasUserInfo = true
@@ -58,27 +54,59 @@ create.Page(store, {
       this.store.data.motto = 'abcdefg'
     }, 2000)
 
+    setTimeout(() => {
+      this.store.set(this.store.data, 'newProp', 'newPropVal')
+    }, 3000)
+
+
     const handler = function (evt) {
-      console.log(evt)
+      console.log('store变化',evt)
     }
     store.onChange(handler)
 
-    store.offChange(handler)
+    //store.offChange(handler)
+
+    // 切换自定义tabBar
+   /*  let tab = this.getTabBar();
+    console.log(tab)
+    wx.switchTab({
+      url: tab.data.list[1].pagePath,
+    }) */
 
   },
-
   onShow() {
+
     if (typeof this.getTabBar === 'function' &&
       this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 1
+        selected: 0
       })
+    }
+
+  },
+
+  methods:{
+    // 跳转测试
+    go() {
+      wx.navigateTo({
+        url:'/subPackages/package-1/pages/test/test?name=www'
+      })
+    },
+    
+    //事件处理函数
+    bindViewTap: function () {
+      wx.navigateTo({
+        url: '../logs/logs'
+      })
+    },
+
+    getUserInfo: function (e) {
+      console.log('用户信息',e)
+      this.store.data.userInfo = e.detail.userInfo
+      this.store.data.hasUserInfo = true
+  
     }
   },
 
-  getUserInfo: function (e) {
-    this.store.data.userInfo = e.detail.userInfo
-    this.store.data.hasUserInfo = true
-
-  }
+  
 })

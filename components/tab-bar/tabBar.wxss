@@ -1,0 +1,48 @@
+/* components/tab-bar/tabBar.wxss */
+.base_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.simon2_fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  background-color: #fff;
+  color: #666;
+  z-index: 13;
+}
+.simon2_fixed .link {
+  position: relative;
+  flex: 1;
+  height: 132rpx;
+  color: #666;
+  font-size: 22rpx;
+  text-align: center;
+}
+.simon2_fixed .link .icon_size {
+  font-size: 36rpx;
+  display: block;
+  width: 50rpx;
+  height:50rpx;
+  margin-bottom:10rpx;
+}
+.simon2_fixed .link .icon-shijian{
+  font-size: 41rpx;
+  margin-top:-2rpx;
+}
+.simon2_fixed .link .button {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:132rpx;
+  width: 100%;
+}
+.simon2_fixed .link.wx_active {
+  color: #f47175;
+}
+
+.simon2_fixed .active{ color: #FF0000;}

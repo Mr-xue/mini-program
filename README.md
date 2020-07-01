@@ -157,6 +157,12 @@
 	  let name = e.currentTarget.dataset.name;
 	},
 
+#### 9.下拉刷新的使用方法
+1.页面配置文件中将`enablePullDownRefresh`设为`true`，然后在页面监听 `onPullDownRefresh` 事件
+
+2.通过 `wx.startPullDownRefresh(Object)` 和 `wx.stopPullDownRefresh(Object)` 触发
+
+[参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onpulldownrefresh)
 
 ## 注意
 **上线前需要将util目录下http.js的env改为prod后，才能构建，否则编译后调用的是本地接口**

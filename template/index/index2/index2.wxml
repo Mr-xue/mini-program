@@ -1,3 +1,6 @@
+<template name="demo">
+<text>测试</text>
+</template>
 <template name="index2">
 <!--components/index2/index2.wxml-->
 <view class="container">
