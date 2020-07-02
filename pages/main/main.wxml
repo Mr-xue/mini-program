@@ -22,7 +22,7 @@
   <!-- 我的 -->
   <mine wx:elif="{{$.activeTab == 'mine'}}"></mine>
 
-<!--   <template is="demo">
+  <!-- <template is="demo">
   </template>
   <template is="index{{$.tpl}}" data="{{show: show,background: background,indicatorDots: indicatorDots,vertical: vertical,autoplay: autoplay,interval: interval,duration: duration}}"></template> -->
 </view>

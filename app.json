@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/logs/logs",
     "pages/works/works",
     "pages/series/series",
     "pages/about/about",
@@ -14,6 +13,7 @@
         "pages/test/test"
       ]
     }
+  
   ],
   "window": {
     "backgroundTextStyle": "light",

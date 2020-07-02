@@ -1,66 +1,27 @@
-// pages/mine/mine.js
-Page({
+// pages/works/works.js
+Component({
+	behaviors: [],
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+	properties: {},
 
-  },
+	data: {}, // 私有数据，可用于模板渲染
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+	lifetimes: {
+		// 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+		attached: function () {},
+		moved: function () {},
+		detached: function () {},
+	},
 
-  },
+	// 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+	ready: function () {},
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+	pageLifetimes: {
+		// 组件所在页面的生命周期函数
+		show: function () {},
+		hide: function () {},
+		resize: function () {},
+	},
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+	methods: {},
+});
