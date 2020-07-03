@@ -1,0 +1,48 @@
+<!-- 导航 -->
+<view class="nav">
+	<view
+		bind:tap="tabClick"
+		data-tab="index"
+		class="{{ $.activeTab == 'index' ? 'active' : '' }}"
+		>首页</view
+	>
+	<view
+		bind:tap="tabClick"
+		data-type="shoWork"
+		data-tab="works"
+		class="{{$.activeTab == 'works' ? 'active' : ''}}"
+	>
+		作品
+		<!--  <view class="list">
+            <view>儿童</view>
+            <view>家庭</view>
+            <view>创意</view>
+        </view> -->
+	</view>
+	<view
+		bind:tap="tabClick"
+		data-type="showTao"
+		data-tab="series"
+		class="{{$.activeTab == 'series' ? 'active' : ''}}"
+	>
+		套系
+		<!-- <view class="list">
+            <view>儿童</view>
+            <view>新生儿</view>
+        </view> -->
+	</view>
+	<view
+		bind:tap="tabClick"
+		data-tab="about"
+		class="{{ $.activeTab == 'about' ? 'active' : '' }}"
+	>
+		关于
+	</view>
+	<view
+		bind:tap="tabClick"
+		data-tab="mine"
+		class="{{ $.activeTab == 'mine' ? 'active' : '' }}"
+	>
+		我的
+	</view>
+</view>

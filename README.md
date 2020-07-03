@@ -164,10 +164,27 @@
 
 [参考文档](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html#onpulldownrefresh)
 
+#### 10.在app.json中声明的组件为全局自定义组件，在小程序内的页面或自定义组件中可以直接使用而无需再声明
 
+#### 11. 花括号和引号之间如果有空格，将最终被解析成为字符串
+
+```html
+
+    <view wx:for="{{[1,2,3]}} ">
+    {{item}}
+    </view>
+
+    等同于
+
+    <view wx:for="{{[1,2,3] + ' '}}">
+    {{item}}
+    </view>
+    
+```
 
 ## 注意
 **上线前需要将util目录下http.js的env改为prod后，才能构建，否则编译后调用的是本地接口**
+
 
 
 ## 要点文档

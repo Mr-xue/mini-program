@@ -1,6 +1,7 @@
-<!--pages/works/works.wxml-->
+<nav-bar></nav-bar>
+
 <text>作品页</text>
 
 <tab-bar></tab-bar>
 
-<text bindtap="go">跳转测试页</text>
+<text bindtap="go" class="jump">跳转测试页</text>

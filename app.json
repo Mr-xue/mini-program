@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/works/works",
-    "pages/series/series",
-    "pages/about/about",
-    "pages/mine/mine"
+    "components/nav-bar/nav-bar"
   ],
+  "usingComponents":{
+    "tab-bar" : "components/tab-bar/tabBar",
+    "nav-bar": "components/nav-bar/nav-bar"
+  },
   "subpackages": [
     {
       "root": "subPackages/package-1",
@@ -13,7 +14,6 @@
         "pages/test/test"
       ]
     }
-  
   ],
   "window": {
     "backgroundTextStyle": "light",

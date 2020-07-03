@@ -1,7 +1,6 @@
 {
   "component":true,
   "usingComponents": {
-    "tab-bar" : "/components/tab-bar/tabBar",
     "mp-gallery": "weui-miniprogram/gallery/gallery"
   }
 }

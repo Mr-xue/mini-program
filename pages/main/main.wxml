@@ -2,7 +2,7 @@
 <import src="/template/index/index2/index2" /> -->
 
 <view class="main-page">
-  <button style="margin-bottom:20rpx;" bindtap="changeTpl">切换主页模板{{ $.tpl === 1 ? 2 : 1}}</button>
+  <button style="margin-bottom:20rpx;" bindtap="changeTpl">{{$.activeTab}} 切换主页模板{{ $.tpl === 1 ? 2 : 1}}</button>
 
   <!-- 首页 -->
   <block wx:if="{{$.activeTab == 'index'}}">

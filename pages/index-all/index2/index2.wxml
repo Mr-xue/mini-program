@@ -1,80 +1,38 @@
-<!--components/index2/index2.wxml-->
+<!-- components/index2/index2.wxml -->
 <view class="container">
-  <view class="page-body">
-
-    <!-- 导航 -->
-    <view class="nav">
-      <view>首页</view>
-      <view 
-        bindtap="change" 
-        data-type="shoWork" 
-        class="{{show == 'shoWork' ? 'show' : ''}}"
-      >
-        作品+
-        <view class="list">
-          <view>儿童</view>
-          <view>家庭</view>
-          <view>创意</view>
+    <view class="page-body">
+        <!-- 顶部导航 -->
+        <nav-bar></nav-bar>
+       
+        <!-- 幻灯片 -->
+        <view class="page-section page-section-spacing swiper">
+            <swiper style="height: 496rpx;" indicator-dots="{{ indicatorDots }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}">
+                <block wx:for="{{ background }}" wx:key="*this">
+                    <swiper-item>
+                        <view class="swiper-item">
+                            <image src="{{ item }}" mode="aspectFill" style="width: 100%;"></image>
+                        </view>
+                    </swiper-item>
+                </block>
+            </swiper>
         </view>
-      </view>
-      <view 
-        bindtap="change" 
-        data-type="showTao" 
-        class="{{show == 'showTao' ? 'show' : ''}}"
-      >
-        套系+
-        <view class="list">
-          <view>儿童</view>
-          <view>新生儿</view>
-        </view>
-      </view>
-      <view>关于</view>
-      <view>我的</view>
-    </view>
-
-    <!-- 幻灯片 -->
-    <view class="page-section page-section-spacing swiper">
-      <swiper  style="height:496rpx;" indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item">
-              <image src="{{item}}" mode="aspectFill" style="width:100%;"></image>
+        <!-- 作品展示 -->
+        <view class="work-tit">作品展示</view>
+        <view class="works">
+            <view bindtap="preview" class="w-li" wx:for="123456" wx:key="index">
+                <image mode="aspectFill" src="https://img.picbling.cn/Fns9NskL3Ws-dDdKg8b7xPHBdoAn-pcPgCoverSmall"></image>
+                <view class="w-tit">五彩的童年</view>
+                <view class="w-time">July 9, 2018</view>
             </view>
-          </swiper-item>
-        </block>
-      </swiper>
+        </view>
+        <view class="f-ele">
+            <i class="iconfont iconiconfontyonghu"></i>
+            浮动元素
+        </view>
     </view>
-
-    <!-- 作品展示 -->
-    <view class="work-tit">作品展示</view>
-    <view class="works">
-      <view bindtap="preview" class="w-li" wx:for="123456" wx:key="index">
-        <image mode="aspectFill" src="https://img.picbling.cn/Fns9NskL3Ws-dDdKg8b7xPHBdoAn-pcPgCoverSmall"></image>
-        <view class="w-tit">五彩的童年</view>
-        <view class="w-time">July 9, 2018</view>
-      </view>
-    </view>
-
-    <view class="f-ele">
-      <i class="iconfont iconiconfontyonghu"></i>
-      浮动元素
-    </view>
-  </view>
-
-  <!-- 图片预览 -->
-  <mp-gallery 
-     show="{{showImg}}" 
-     bindchange="imgChange" 
-     binddelete="delete" 
-     bindhide="hide" 
-     show-delete="{{false}}"
-     img-urls="{{background}}" 
-     hide-on-click="{{true}}" 
-     current="0">
-  </mp-gallery>
-
-  <!-- 底部tabbar -->
-  <tab-bar></tab-bar>
-  
+    <!-- 图片预览 -->
+    <mp-gallery show="{{ showImg }}" bindchange="imgChange" binddelete="delete" bindhide="hide" show-delete="{{ false }}" img-urls="{{ background }}" hide-on-click="{{ true }}" current="0"></mp-gallery>
+    
+    <!-- 底部tabbar -->
+    <tab-bar></tab-bar>
 </view>

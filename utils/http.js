@@ -1,97 +1,92 @@
 /**
  * 封装网络请求模块
  */
- 
- //dev、prod用于区分开发环境和线上环境,上线前要改为prod
-let env = 'dev',
-    baseUrl;
 
-if(env === 'dev') {
-  baseUrl = 'http://xxx.com';
-}else{
-  baseUrl = 'https://xxx.com';
+//dev、prod用于区分开发环境和线上环境,上线前要改为prod
+let env = "dev",
+	baseUrl;
+
+if (env === "dev") {
+	baseUrl = "http://xxx.com";
+} else {
+	baseUrl = "https://xxx.com";
 }
 
-const http = ({
-  url = '',
-  param = {},
-  ...other
-} = {}) => {
+const http = ({ url = "", param = {}, ...other } = {}) => {
+	wx.showLoading({
+		title: "请求中，请耐心等待..",
+	});
 
-  wx.showLoading({
-    title: '请求中，请耐心等待..'
-  });
+	return new Promise((resolve, reject) => {
+		wx.request({
+			url: getUrl(url),
+			data: param,
+			header: {
+				"content-type": "application/json", // 默认值 ,另一种是 "content-type": "application/x-www-form-urlencoded"
+			},
+			...other,
+			complete: (res) => {
+				wx.hideLoading();
 
-  return new Promise((resolve, reject) => {
-    wx.request({
-      url: getUrl(url),
-      data: param,
-      header: {
-        'content-type': 'application/json' // 默认值 ,另一种是 "content-type": "application/x-www-form-urlencoded"
-      },
-      ...other,
-      complete: (res) => {
-        wx.hideLoading();
-
-        // 根据实际接口数据结构及错误状态进行提示
-        if (res.statusCode == 200 ) {
-          resolve(res.data)
-        } else {
-          // 错误提示
-          wx.showToast({
-            title: 'Error：' + res.data.msg,
-            icon: 'none',
-            duration: 2000
-          })
-          reject(res)
-        }
-      }
-    })
-  })
-}
+				// 根据实际接口数据结构及错误状态进行提示
+				if (res.statusCode == 200) {
+					resolve(res.data);
+				} else {
+					// 错误提示
+					wx.showToast({
+						title: "请求错误：" + res.data.msg,
+						icon: "none",
+						duration: 2000,
+					});
+					reject(res);
+				}
+			},
+		});
+	});
+};
 
 const getUrl = (url) => {
-  if (url.indexOf('://') == -1) {
-    url = baseUrl + url;
-  }
-  return url
-}
+	if (url.indexOf("://") == -1) {
+		url = baseUrl + url;
+	}
+	return url;
+};
 
-// get方法
 const _get = (url, param = {}) => {
-  return http({
-    url,
-    param
-  })
-}
+	return http({
+		url,
+		param,
+	});
+};
 
 const _post = (url, param = {}) => {
-  return http({
-    url,
-    param,
-    method: 'POST'
-  })
-}
+	return http({
+		url,
+		param,
+		method: "POST",
+	});
+};
 
 const _put = (url, param = {}) => {
-  return http({
-    url,
-    param,
-    method: 'PUT'
-  })
-}
+	return http({
+		url,
+		param,
+		method: "PUT",
+	});
+};
 
 const _delete = (url, param = {}) => {
-  return http({
-    url,
-    param,
-    method: 'PUT'
-  })
-}
+	return http({
+		url,
+		param,
+		method: "PUT",
+	});
+};
+
 module.exports = {
-  baseUrl,
-  _get,
-  _post,
-  _put,
-  _delete
-}
+	baseUrl,
+	_get,
+	_post,
+	_put,
+	_delete,
+};

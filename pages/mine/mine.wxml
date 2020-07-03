@@ -1,4 +1,6 @@
-<!--pages/mine/mine.wxml-->
+
+<nav-bar></nav-bar>
+
 <text>我的</text>
 
 

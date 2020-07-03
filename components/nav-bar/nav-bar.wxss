@@ -1,0 +1,61 @@
+.nav {
+	display: flex;
+	height: 72rpx;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #434349;
+}
+.nav > view {
+	position: relative;
+	color: #fff;
+	flex: 1;
+	height: 100%;
+	line-height: 72rpx;
+	font-size: 24rpx;
+	text-align: center;
+}
+.nav > view.active{
+    background-color: #82c8af;
+}
+.nav > view::before {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 10px;
+	border-right: 1px solid rgba(255, 255, 255, 0.35);
+	width: 1px;
+	height: 16px;
+}
+.show {
+	background-color: #82c8af;
+}
+.show .list {
+	opacity: 1;
+	transform: none;
+	z-index: 10;
+}
+.list {
+	position: absolute;
+	top: 72rpx;
+	z-index: -1;
+	width: 100%;
+	opacity: 0;
+	transform: translateY(10px);
+	transition: 0.2s all;
+	text-align: center;
+	background-color: #434349;
+}
+.list > view {
+	position: relative;
+	height: 70rpx;
+	line-height: 70rpx;
+}
+.list > view::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.35);
+}

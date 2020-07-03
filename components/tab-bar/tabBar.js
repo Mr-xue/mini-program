@@ -59,18 +59,7 @@ create.Component(store,{
     // 点击底部tab
     tabClick(e) {
       let tab = e.currentTarget.dataset.tab;
-      console.log('点击tab信息',tab)
       this.store.data.activeTab = tab;     
-      
-      /* wx.startPullDownRefresh({
-        complete(e) {
-          console.log(e)
-        }
-      })
-      
-      setTimeout(()=>{
-        wx.stopPullDownRefresh()
-      },1500) */
     },
   }
 })
